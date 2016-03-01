@@ -26,12 +26,6 @@
                 #"^substance-([\d\.]*).*/packages/(.*)/(.*)\2\.js"  "cljsjs/substance/packages/$2.js"
                 })
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.substance"
-              :requires ["cljsjs.jquery" ; "jquery": "2.1.4",
-                         "cljsjs.lodash" ; "lodash": "3.10.1",
-                         ;; "cheerio": "0.19.0",
-                         ;; "dom-serializer": "0.1.0"
-                         ])
 
    ;; (sift :move {#"^CodeMirror-([\d\.]*)/lib/codemirror\.js"    "cljsjs/codemirror/development/codemirror.inc.js"
    ;;              #"^CodeMirror-([\d\.]*)/lib/codemirror\.css"   "cljsjs/codemirror/development/codemirror.css"
@@ -45,7 +39,7 @@
    ;; (minify    :in       "cljsjs/codemirror/development/codemirror.css"
    ;;            :out      "cljsjs/codemirror/production/codemirror.min.css")
    ;; (sift :include #{#"^cljsjs"})
-   ;; (deps-cljs :name "cljsjs.codemirror")
+
    ;; (sift :move {#"^cljsjs/codemirror/common/mode/(.*)\.js" "cljsjs/codemirror/common/mode/$1.inc.js"
    ;;              #"^cljsjs/codemirror/common/keymap/(.*)\.js" "cljsjs/codemirror/common/keymap/$1.inc.js"
    ;;              #"^cljsjs/codemirror/common/addon/(.*)/(.*)\.js" "cljsjs/codemirror/common/addon/$1/$2.inc.js"})
