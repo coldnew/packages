@@ -22,10 +22,11 @@
    (download :url (format "https://github.com/substance/substance/archive/v%s.zip" +lib-version+)
              :unzip true
              :checksum substance-checksum)
-   (sift :move {#"^substance-([\d\.]*)/model/(.*)/\2\.js"     "cljsjs/substance/model/$2.js"
-                #"^substance-([\d\.]*)/packages/(.*)/(.*)\2\.js"  "cljsjs/substance/packages/$2.js"
+   (sift :move {#"^substance-([\d\.]*).*/model/(.*)/\2\.js"     "cljsjs/substance/model/$2.js"
+                #"^substance-([\d\.]*).*/packages/(.*)/(.*)\2\.js"  "cljsjs/substance/packages/$2.js"
                 })
    (sift :include #{#"^cljsjs"})
+   (deps-cljs :name "cljsjs.substance")
 
    ;; (sift :move {#"^CodeMirror-([\d\.]*)/lib/codemirror\.js"    "cljsjs/codemirror/development/codemirror.inc.js"
    ;;              #"^CodeMirror-([\d\.]*)/lib/codemirror\.css"   "cljsjs/codemirror/development/codemirror.css"
